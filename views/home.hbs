@@ -1,0 +1,46 @@
+<style>
+  button{ min-width: 50px; }
+</style>
+<div>
+  <div class="row justify-content-center">
+    <div class="col-lg-10" style="margin-top: 50px;">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+            <tr>
+              <th scope="row">{{this.id}}</th>
+              <td>{{this.email}}</td>
+              <td>{{this.first_name}}</td>
+              <td>{{this.last_name}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <button onclick="prev()">Prev</button>
+        <a href="/1"><button>1</button></a>
+        <a href="/2"><button>2</button></a>
+        <a href="/3"><button>3</button></a>
+        <a href="/4"><button>4</button></a>
+        <button onclick="next()">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function next(){ const page=window.location.href; const
+  currPageNo=parseInt(page.charAt(page.length-1)); const
+  nextPageNo=currPageNo+1; if(nextPageNo<5) window.location=nextPageNo }
+  function prev(){ const page=window.location.href; const
+  currPageNo=parseInt(page.charAt(page.length-1)); const
+  prevPageNo=currPageNo-1; if(prevPageNo>0)window.location=prevPageNo }
+</script>
