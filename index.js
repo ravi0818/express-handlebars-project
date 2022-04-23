@@ -14,16 +14,17 @@ app.engine(
 
 app.set("view engine", "hbs");
 
+app.get("/", async (req, res) => {
+  res.redirect("/1");
+});
+
 app.get("/:id", async (req, res) => {
+  console.log(req.params.id);
   let data = await axios.get(
     "https://reqres.in/api/users?page=" + req.params.id
   );
 
-  //   let data = await axios.get(
-  //     "http://dummy.restapiexample.com/api/v1/employees"
-  //   );
   data = data.data;
-  console.log(data.data);
 
   res.render("home", {
     data: data.data,
