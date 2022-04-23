@@ -13,7 +13,7 @@ NodeJS project for rendering content from backend using express and handlebars.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/ravi0818/express-handlebars-project
 ```
 
 Go to the project directory
